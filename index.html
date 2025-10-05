@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Financial Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Project Financial Tracker</h1>
+                <button id="add-project-btn" class="btn btn-primary">Add New Project</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="projects-sidebar">
+                <h2>Projects</h2>
+                <div class="projects-list" id="projects-list">
+                    <!-- Projects will be dynamically added here -->
+                </div>
+            </div>
+
+            <div class="project-details">
+                <div class="project-header">
+                    <h2 class="project-title" id="project-title">Select a Project</h2>
+                    <button id="add-supplier-btn" class="btn btn-success" style="display: none;">Add Supplier</button>
+                </div>
+
+                <div id="project-info" style="display: none;">
+                    <div class="project-stats">
+                        <div class="stat-card">
+                            <div>Total Owed</div>
+                            <div class="stat-value total-owed" id="total-owed">Kshs0.00</div>
+                        </div>
+                        <div class="stat-card">
+                            <div>Total Paid</div>
+                            <div class="stat-value total-paid" id="total-paid">Kshs0.00</div>
+                        </div>
+                        <div class="stat-card">
+                            <div>Balance</div>
+                            <div class="stat-value balance" id="balance">Kshs0.00</div>
+                        </div>
+                    </div>
+
+                    <div class="suppliers-section">
+                        <h3 class="section-title">Suppliers/Contractors</h3>
+                        <table class="suppliers-table">
+                            <thead>
+                                <tr>
+                                    <th>Supplier Name</th>
+                                    <th>Amount Owed</th>
+                                    <th>Amount Paid</th>
+                                    <th>Balance</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="suppliers-table-body">
+                                <!-- Suppliers will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Project Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Add New Project</h3>
+                <span class="close-modal" id="close-project-modal">&times;</span>
+            </div>
+            <form id="project-form">
+                <div class="form-group">
+                    <label for="project-name">Project Name</label>
+                    <input type="text" id="project-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn" id="cancel-project-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Supplier Modal -->
+    <div class="modal" id="supplier-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Supplier/Contractor</h3>
+                <span class="close-modal" id="close-supplier-modal">&times;</span>
+            </div>
+            <form id="supplier-form">
+                <div class="form-group">
+                    <label for="supplier-name">Supplier Name</label>
+                    <input type="text" id="supplier-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount-owed">Amount Owed (Kshs)</label>
+                    <input type="number" id="amount-owed" class="form-control" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount-paid">Amount Paid (Kshs)</label>
+                    <input type="number" id="amount-paid" class="form-control" step="0.01" min="0" value="0" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn" id="cancel-supplier-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Supplier</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Payment Modal -->
+    <div class="modal" id="payment-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Payment</h3>
+                <span class="close-modal" id="close-payment-modal">&times;</span>
+            </div>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="supplier-select">Supplier</label>
+                    <select id="supplier-select" class="form-control" required>
+                        <option value="">Select a supplier</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="payment-amount">Payment Amount (Kshs)</label>
+                    <input type="number" id="payment-amount" class="form-control" step="0.01" min="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment-date">Payment Date</label>
+                    <input type="date" id="payment-date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment-notes">Notes (Optional)</label>
+                    <textarea id="payment-notes" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn" id="cancel-payment-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Record Payment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="project.js"></script>
+    <script src="suppliers.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
