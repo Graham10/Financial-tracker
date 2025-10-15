@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Financial Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -35,15 +35,15 @@
                     <div class="project-stats">
                         <div class="stat-card">
                             <div>Total Owed</div>
-                            <div class="stat-value total-owed" id="total-owed">Kshs0.00</div>
+                            <div class="stat-value total-owed" id="total-owed">$0.00</div>
                         </div>
                         <div class="stat-card">
                             <div>Total Paid</div>
-                            <div class="stat-value total-paid" id="total-paid">Kshs0.00</div>
+                            <div class="stat-value total-paid" id="total-paid">$0.00</div>
                         </div>
                         <div class="stat-card">
                             <div>Balance</div>
-                            <div class="stat-value balance" id="balance">Kshs0.00</div>
+                            <div class="stat-value balance" id="balance">$0.00</div>
                         </div>
                     </div>
 
@@ -106,11 +106,11 @@
                     <input type="text" id="supplier-name" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="amount-owed">Amount Owed (Kshs)</label>
+                    <label for="amount-owed">Amount Owed ($)</label>
                     <input type="number" id="amount-owed" class="form-control" step="0.01" min="0" required>
                 </div>
                 <div class="form-group">
-                    <label for="amount-paid">Amount Paid (Kshs)</label>
+                    <label for="amount-paid">Amount Paid ($)</label>
                     <input type="number" id="amount-paid" class="form-control" step="0.01" min="0" value="0" required>
                 </div>
                 <div class="form-actions">
@@ -136,7 +136,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="payment-amount">Payment Amount (Kshs)</label>
+                    <label for="payment-amount">Payment Amount ($)</label>
                     <input type="number" id="payment-amount" class="form-control" step="0.01" min="0.01" required>
                 </div>
                 <div class="form-group">
@@ -155,9 +155,11 @@
         </div>
     </div>
 
-    <script src="project.js"></script>
-    <script src="suppliers.js"></script>
-    <script src="app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/suppliers.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

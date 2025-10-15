@@ -318,6 +318,10 @@ h1 {
     text-align: center;
 }
 
+.text-muted {
+    color: #6c757d;
+}
+
 .message {
     padding: 10px;
     border-radius: 4px;
@@ -346,6 +350,15 @@ h1 {
 .user-welcome {
     color: white;
     font-weight: 500;
+}
+
+.user-role-badge {
+    background: #f39c12;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-left: 8px;
 }
 
 .action-buttons {
@@ -415,6 +428,22 @@ h1 {
     overflow-y: auto;
 }
 
+.permissions-guide {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.permissions-guide ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.permissions-guide li {
+    margin-bottom: 5px;
+}
+
 .btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
@@ -422,6 +451,59 @@ h1 {
 
 .btn:disabled:hover {
     transform: none;
+    background-color: inherit;
+}
+
+.action-buttons .btn:disabled:hover {
+    transform: none;
+    background-color: inherit;
+}
+
+/* User management specific styles */
+.admin-create-user-form {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.user-role-badge {
+    background: #f39c12;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.user-item-actions {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* Grid layout for user creation form */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 10px;
+    align-items: end;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-item-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .user-item-actions .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -437,8 +519,8 @@ h1 {
         display: block;
         overflow-x: auto;
     }
-
-     .user-info {
+    
+    .user-info {
         flex-direction: column;
         gap: 10px;
         align-items: flex-start;

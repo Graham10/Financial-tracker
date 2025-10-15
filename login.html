@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Project Financial Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -56,6 +56,20 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="user-role">User Role</label>
+                    <select id="user-role" class="form-control">
+                        <option value="viewer">Viewer (Read Only)</option>
+                        <option value="accountant">Accountant (View + Payments)</option>
+                        <option value="manager" ${authManager.isAdmin() ? '' : 'disabled' }>Manager (Full Access)
+                            ${!authManager.isAdmin() ? '- Admin Only' : ''}</option>
+                        <option value="admin" ${authManager.isAdmin() ? '' : 'disabled' }>Administrator
+                            ${!authManager.isAdmin() ? '- Admin Only' : ''}</option>
+                    </select>
+                    </select>
+                    <small class="text-muted">Note: Only administrators can create manager/admin accounts</small>
+                </div>
+
+                <div class="form-group">
                     <button type="submit" class="btn btn-success btn-block">Register</button>
                 </div>
 
@@ -68,7 +82,7 @@
         </div>
     </div>
 
-    <script src="auth.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 
 </html>
