@@ -44,12 +44,12 @@ class Utils {
     }
     
     static formatCurrency(amount) {
-        return new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            minimumFractionDigits: 2
-        }).format(amount);
-    }
+    return new Intl.NumberFormat('en-KE', {
+        style: 'currency',
+        currency: 'KES',
+        minimumFractionDigits: 2
+    }).format(amount);
+}
     
     static formatDate(dateString) {
         return new Date(dateString).toLocaleDateString('en-US', {
